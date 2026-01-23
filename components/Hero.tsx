@@ -3,7 +3,7 @@ import { Badge } from "./ui/badge"
 
 export const Hero = () => {
   return (
-    <section id="home" className="pt-32">
+    <section id="home" className="pt-32 mb-24">
         <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 gap-16 items-center overflow-auto md:mt-12">
 
             <div>
