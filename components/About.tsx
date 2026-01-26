@@ -1,18 +1,20 @@
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 mb-20">
-        <div className="max-w-6xl mx-auto px-4">
-            <h3 className="text-2xl md:text-3xl font-light mb-6">About Me</h3>
+    <section id="about" className="py-24 mb-18">
+      <div className="max-w-6xl mx-auto px-4">
+        <h3 className="text-2xl md:text-3xl font-light mb-6">About Me</h3>
 
-            <p className="max-w-4xl text-base md:text-lg font-thin text-neutral-600 leading-relaxed">
-                I help teams turn ideas into scalable, production-ready web applications. With over 3 years of experience as a Full-Stack Developer, I've worked across frontend, backend, and databases to deliver features that are reliable, performant, and user-friendly.
+        <p className="max-w-4xl text-base md:text-lg font-thin text-neutral-600 leading-relaxed">
+          I'm a Full-Stack Web Developer with 3+ years of experience helping teams turn ideas into scalable, production-ready web applications. I've worked across the frontend, backend, and databases to deliver features that are reliable, performant, and user-focused.
 
-                On the frontend, I build clean and responsive interfaces using React, Tailwind CSS, and modern UI principles. On the backend, I design and implement APIs with FastAPI and Django, ensuring smooth data flow, security, and scalability. I work confidently with PostgreSQL and MongoDB, structuring data to support real-world business needs.
+          On the frontend, I build clean, responsive interfaces using React and Tailwind CSS, with a strong focus on usability and maintainable UI architecture. On the backend, I design and develop RESTful APIs with FastAPI and Django, ensuring secure data handling, scalability, and clear system structure. I work confidently with PostgreSQL and MongoDB, designing data models that support real-world business requirements.
 
-                What I bring to a company is ownership and problem-solving—not just writing code, but understanding why a feature is needed and how to implement it efficiently. I'm continuously improving my workflow by exploring Docker, GitHub Actions, and CI/CD pipelines to help teams ship faster and with fewer errors.
-            </p>
-        </div>
+          I add value by taking ownership of features from idea to deployment, writing clean and maintainable code, and translating product requirements into reliable technical solutions. I collaborate closely with designers, product managers, and other developers to ensure solutions align with both user needs and business goals. I approach development with a problem-solving mindset, focusing on clarity, usability, and long-term maintainability rather than quick fixes.
+          
+          I'm also continuously improving my development workflow by expanding my experience with Docker, GitHub Actions, and CI/CD pipelines, helping teams ship faster and with more confidence.
+        </p>
+      </div>
     </section>
   )
 }

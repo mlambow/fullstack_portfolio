@@ -26,6 +26,7 @@ export const Hero = () => {
                     <Badge variant="secondary" className="font-thin">Django</Badge>
                     <Badge className="font-thin">MongoDB</Badge>
                     <Badge variant="secondary" className="font-thin">Postgres</Badge>
+                    <Badge variant="secondary" className="font-thin">Firebase</Badge>
                     <Badge variant="outline" className="font-thin">CI/CD</Badge>
                     <Badge variant="secondary" className="font-thin">Docker</Badge>
                 </div>
