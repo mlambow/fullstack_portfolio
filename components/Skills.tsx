@@ -1,68 +1,90 @@
-
 export const Skills = () => {
-  return (
-    <section id="skills" className="pb-26">
-        <div className="max-w-6xl mx-auto px-4">
-            <h3 className="text-2xl md:text-3xl font-light mb-2">Skills</h3>
-            <p className="text-lg md:text-xl font-light mb-6">My skill set reflects hands-on experience building, maintaining and scaling real-world web applications.</p>
-
-            <div className="flex flex-col max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                    <div>
-                        <h3 className="text-xl font-light">Frontend</h3>
-                        <ul className="list-disc pl-5 md:pl-4 font-light">
-                            <li>JavaScript (ES6+)</li>
-                            <li>React</li>
-                            <li>HTML5 & CSS3</li>
-                            <li>Tailwind CSS</li>
-                            <li>Responsive & Accessible UI Design</li>
-                        </ul>
-                    </div>
-
-                    <div className="mt-4 md:mt-0">
-                        <h3 className="text-xl font-light">Backend</h3>
-                        <ul className="list-disc pl-5 md:pl-4 font-light">
-                            <li>Python</li>
-                            <li>Fast API</li>
-                            <li>Django</li>
-                            <li>RESTful API Design</li>
-                            <li>Authentication & Authorization</li>
-                        </ul>
-                    </div>
+    return (
+        <section id="skills" className="pt-8 pb-12 transition-colors duration-200">
+            <div className="max-w-6xl mx-auto px-4">
+                {/* Section Header */}
+                <div className="pb-1">
+                  <span className="text-xs font-mono font-normal uppercase tracking-widest text-muted-foreground block mb-2">
+                    {"// Technical Competency"}
+                  </span>
+                    <h2 className="md:text-3xl text-xl font-normal tracking-tight text-foreground">
+                        Capabilities & Stack
+                    </h2>
+                    <p className="text-sm md:text-base text-muted-foreground font-light max-w-xl mt-1.5 leading-relaxed">
+                        Hands-on proficiency architecture building, maintaining, and scaling decentralized or cloud-hosted web utilities.
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-0 md:mt-6 py-4">
-                    <div>
-                        <h3 className="text-xl font-light">Databases</h3>
-                        <ul className="list-disc pl-5 md:pl-4 font-light">
+                {/* The Grid Workspace */}
+                <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4">
+
+                    {/* 1. FRONTEND BUILD LAYERS */}
+                    <div className="space-y-4">
+                        <h3 className="text-xs font-mono tracking-wider uppercase text-muted-foreground pb-2 border-b border-red-700">
+                            01 / Frontend Core
+                        </h3>
+                        <ul className="space-y-1.5 font-light text-sm  text-foreground/90">
+                            <li className="flex items-center gap-2">React <span className="text-[10px] text-muted-foreground/50">[next.js]</span></li>
+                            <li>JavaScript <span className="text-[10px] text-muted-foreground/50 font-mono">[ES6+]</span></li>
+                            <li>Tailwind CSS</li>
+                            <li>CSS & Bootstrap</li>
+                            <li className="text-muted-foreground font-thin text-xs md:text-sm">Responsive & Accessible UI Systems</li>
+                        </ul>
+                    </div>
+
+                    {/* 2. BACKEND LAYERS */}
+                    <div className="space-y-4">
+                        <h3 className="text-xs font-mono tracking-wider uppercase text-muted-foreground pb-2 border-b border-red-700">
+                            02 / Backend Engines
+                        </h3>
+                        <ul className="space-y-1.5 font-light text-sm text-foreground/90">
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>Django Framework</li>
+                            <li className="text-muted-foreground font-thin text-xs md:text-sm">RESTful API Design & Architecture</li>
+                            <li className="text-muted-foreground font-thin text-xs md:text-sm">RBAC Authentication Models</li>
+                        </ul>
+                    </div>
+
+                    {/* 3. PERSISTENCE LAYER */}
+                    <div className="space-y-4">
+                        <h3 className="text-xs font-mono tracking-wider uppercase text-muted-foreground pb-2 border-b border-red-700">
+                            03 / Database Storage
+                        </h3>
+                        <ul className="space-y-1.5 font-light text-sm text-foreground/90">
                             <li>PostgreSQL</li>
                             <li>MongoDB</li>
-                            <li>Firebase</li>
-                            <li>Database Modeling & Query Optimization</li>
+                            <li>Firebase Storage</li>
+                            <li className="text-muted-foreground font-thin text-xs md:text-sm">Data Modeling & Index Optimization</li>
                         </ul>
                     </div>
 
-                    <div className="mt-4 md:mt-0">
-                    <h3 className="text-xl font-light">DevOps & Automation</h3>
-                        <ul className="list-disc pl-5 md:pl-4 font-light">
-                            <li>Docker</li>
+                    {/* 4. ENVIRONMENT & RUNTIMES */}
+                    <div className="space-y-4 mt-4">
+                        <h3 className="text-xs font-mono tracking-wider uppercase text-muted-foreground pb-2 border-b border-red-700">
+                            04 / DevOps & Pipelines
+                        </h3>
+                        <ul className="space-y-1.5 font-light text-sm text-foreground/90">
+                            <li>Docker <span className="text-[10px] text-muted-foreground/60 font-mono">[containers]</span></li>
                             <li>GitHub Actions</li>
-                            <li>CI/CD Pipelines</li>
-                            <li>Jenkins (Basics)</li>
+                            <li>CI/CD Automation</li>
+                            <li className="text-muted-foreground/50 text-xs md:text-sm">Jenkins Systems (Fundamentals)</li>
                         </ul>
                     </div>
 
-                    <div className="mt-4 md:mt-0">
-                    <h3 className="text-xl font-light">Tools & Collaboration</h3>
-                        <ul className="list-disc pl-5 md:pl-4 font-light">
-                            <li>Git & GitHub</li>
-                            <li>Code Reviews</li>
-                            <li>Debugging & Testing</li>
+                    {/* 5. PIPELINES & WORKFLOWS */}
+                    <div className="space-y-4 md:col-span-2 lg:col-span-1 mt-4">
+                        <h3 className="text-xs font-mono tracking-wider uppercase text-muted-foreground pb-2 border-b border-red-700">
+                            05 / Workflows
+                        </h3>
+                        <ul className="space-y-1.5 font-light text-sm text-foreground/90">
+                            <li>Git Version Control</li>
+                            <li className="text-muted-foreground font-thin text-xs md:text-sm">Asynchronous Code Review Process</li>
+                            <li className="text-muted-foreground font-thin text-xs md:text-sm">Unit Testing & System Debugging</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-  )
-}
+        </section>
+    );
+};
