@@ -16,8 +16,8 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur">
-      <div className="max-w-6xl mx-auto flex items-center justify-between py-6 px-4">
-        <Link href="/" className="text-lg font-thin">
+      <div className="max-w-6xl uppercase font-mono tracking-widest text-foreground mx-auto flex items-center justify-between py-6 px-4">
+        <Link href="/#home" className="text-lg">
           Wandile Mlambo
         </Link>
 
@@ -27,9 +27,9 @@ export const Header = () => {
               key={id}
               href={href}
               className={cn(
-                "text-neutral-500 transition-colors font-thin",
-                activeSection === id &&
-                  "text-neutral-900 font-semibold"
+                "text-neutral-500 transition-colors duration-150 font-medium",
+                activeSection === id ?
+                  "text-neutral-900 font-semibold" : ""
               )}
             >
               {label}
