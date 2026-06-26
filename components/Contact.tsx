@@ -9,14 +9,38 @@ export const Contact = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Form submission routine goes here
 
-        setTimeout(() => setIsSubmitting(false), 1000); // Simulate network layer delay
+        try {
+            // Send the payload straight to our local Next.js API endpoint
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                // Success: Clear the form inputs
+                setFormData({name: '', email: '', message: ''});
+                alert('Message transmitted successfully.');
+            } else {
+                const data = await response.json();
+                alert(`Transmission failed: ${data.error || 'Unknown error'}`);
+            }
+        } catch (error) {
+            console.error('Network dispatch error:', error);
+            alert('Could not establish contact connection route.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
-        <section id="contact"
-                 className="py-24 bg-background text-foreground transition-colors duration-200">
+        <section
+            id="contact"
+            className="py-24 bg-background text-foreground transition-colors duration-200"
+        >
             <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-16">
 
                 {/* LEFT PANEL: Structural Contexts */}
