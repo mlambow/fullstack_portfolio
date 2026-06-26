@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Project {
-    _id: string;
+    id: string;
     title: string;
     description: string;
     tags: string[];
@@ -32,7 +32,7 @@ export const Projects = ({projects}: ProjectGridProps) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {projects.map((project) => (
                     <article
-                        key={project._id}
+                        key={project.id}
                         className="group flex flex-col justify-between pb-4 border-b border-border/60 hover:border-foreground transition-colors duration-300"
                     >
                         <div className="space-y-2">

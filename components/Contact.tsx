@@ -10,6 +10,7 @@ export const Contact = () => {
         e.preventDefault();
         setIsSubmitting(true);
         // Form submission routine goes here
+
         setTimeout(() => setIsSubmitting(false), 1000); // Simulate network layer delay
     };
 
@@ -21,9 +22,10 @@ export const Contact = () => {
                 {/* LEFT PANEL: Structural Contexts */}
                 <div className="lg:col-span-5 space-y-6">
                     <div>
-            <span className="text-xs font-mono font-normal uppercase tracking-widest text-muted-foreground block mb-2">
-              {"// Connection Gateway"}
-            </span>
+                        <span
+                            className="text-xs font-mono font-normal uppercase tracking-widest text-muted-foreground block mb-2">
+                          {"// Connection Gateway"}
+                        </span>
                         <h2 className="text-2xl md:text-4xl font-normal tracking-tight text-foreground">
                             Get In Touch
                         </h2>
@@ -122,9 +124,7 @@ export const Contact = () => {
                             {isSubmitting ? 'dispatching_payload...' : 'Transmit Message'}
                         </button>
                     </div>
-
                 </form>
-
             </div>
         </section>
     );
