@@ -15,10 +15,10 @@ export async function POST(request: Request) {
 
         // Dispatch email through Resend's architecture
         const data = await resend.emails.send({
-            from: 'Portfolio Contact <onboarding@resend.dev>', // Resend free tier uses this sandbox domain by default
-            to: 'wandile.developer@gmail.com',            // 👈 Put your real inbox email address here!
-            subject: `// Incoming Connection: ${name}`,
-            text: `Identity: ${name}\nReturn Routing Address: ${email}\n\nMessage Payload:\n${message}`,
+            from: 'Portfolio Contact <onboarding@resend.dev>',
+            to: 'wandile.developer@gmail.com',
+            subject: `Incoming Connection from: ${name}`,
+            text: `Name: ${name}\nReturn Email Address: ${email}\n\nMessage:\n${message}`,
         });
 
         return NextResponse.json({success: true, id: data.data?.id});
