@@ -1,4 +1,5 @@
 import React from 'react';
+import {ProjectDescription} from "@/components/ProjectDescription";
 
 interface Project {
     id: string;
@@ -7,7 +8,7 @@ interface Project {
     tags: string[];
     githubUrl?: string;
     liveUrl?: string;
-    isHot?: boolean; // A flag to showcase our single-color highlight
+    isHot?: boolean;
 }
 
 interface ProjectGridProps {
@@ -33,7 +34,7 @@ export const Projects = ({projects}: ProjectGridProps) => {
                 {projects.map((project) => (
                     <article
                         key={project.id}
-                        className="group flex flex-col justify-between pb-4 border-b border-border/60 hover:border-foreground transition-colors duration-300"
+                        className="group flex flex-col justify-between pb-4 border-b border-border/60 hover:border-foreground transition-colors duration-300 cursor-pointer"
                     >
                         <div className="space-y-2">
                             <div className="flex items-baseline justify-between gap-4">
@@ -41,7 +42,7 @@ export const Projects = ({projects}: ProjectGridProps) => {
                                     {project.title}
                                 </h3>
 
-                                {/* SPARING COLOR UTILITY: A single tiny dot to draw attention cleanly */}
+                                {/* SPARING COLOR UTILITY (dot) */}
                                 {project.isHot && (
                                     <span
                                         className="inline-flex items-center gap-1.5 text-[10px] font-mono tracking-wider uppercase text-emerald-600 dark:text-emerald-400 font-medium">
@@ -56,12 +57,13 @@ export const Projects = ({projects}: ProjectGridProps) => {
                                 )}
                             </div>
 
-                            {/* Lightweight body copy */}
-                            <p className="text-sm text-muted-foreground font-thin leading-relaxed max-w-xl">
-                                {project.description}
-                            </p>
+                            {/* Body description */}
+                            <ProjectDescription
+                                description={project.description}
+                                title={project.title}
+                            />
 
-                            {/* Minimal structural tags */}
+                            {/* Minimal tags */}
                             <div className="flex flex-wrap gap-x-3 gap-y-1.5 pt-1">
                                 {project.tags.map((tag) => (
                                     <span
@@ -74,14 +76,14 @@ export const Projects = ({projects}: ProjectGridProps) => {
                             </div>
                         </div>
 
-                        {/* Clean structural action links */}
-                        <div className="flex items-center gap-6 mt-8 text-xs font-mono tracking-tight">
+                        {/* Action links */}
+                        <div className="flex items-center gap-6 mt-6 mb-1 text-xs font-mono tracking-tight">
                             {project.githubUrl && (
                                 <a
                                     href={project.githubUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                                    className="text-muted-foreground pb-1 hover:border-b hover:border-foreground hover:text-foreground transition-colors duration-200"
                                 >
                                     source_code ↗
                                 </a>
@@ -91,7 +93,7 @@ export const Projects = ({projects}: ProjectGridProps) => {
                                     href={project.liveUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-foreground underline underline-offset-4 decoration-border/80 hover:decoration-foreground transition-colors duration-200"
+                                    className="text-muted-foreground pb-1 hover:border-b hover:border-foreground hover:text-foreground transition-colors duration-200"
                                 >
                                     production_node ↗
                                 </a>
