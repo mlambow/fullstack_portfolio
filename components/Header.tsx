@@ -2,25 +2,25 @@
 
 import {cn} from "@/lib/utils"
 import Link from "next/link"
-import {useActiveSection} from "@/lib/hooks/useActiveSession"
+import {useActiveSection} from "@/lib/hooks/useActiveSection"
 import React from "react";
-import {Menu, X} from "lucide-react";
+import {Briefcase, LucideMail, Menu, UserIcon, X, Zap} from "lucide-react";
 
 const links = [
-    {label: "About", href: "#about", id: "about"},
-    {label: "Skills", href: "#skills", id: "skills"},
-    {label: "Projects", href: "#projects", id: "projects"},
-    {label: "Contact", href: "#contact", id: "contact"},
+    {label: "About", href: "#about", id: "about", icon: UserIcon},
+    {label: "Skills", href: "#skills", id: "skills", icon: Zap},
+    {label: "Projects", href: "#projects", id: "projects", icon: Briefcase},
+    {label: "Contact", href: "#contact", id: "contact", icon: LucideMail},
 ]
 
 export const Header = () => {
     const activeSection = useActiveSection()
-    const [isOpen, setIsOpen] = React.useState(false)
+    const [isOpen, setIsOpen] = React.useState(true)
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur">
             <div
-                className="max-w-6xl uppercase font-mono tracking-widest text-foreground mx-auto flex items-center justify-between py-6 px-4">
+                className="max-w-6xl uppercase font-mono tracking-widest text-foreground mx-auto flex items-center justify-between py-6 px-4 relative">
                 <Link href="/#home" className="text-sm sm:text-base lg:text-lg">
                     Wandile Mlambo
                 </Link>
@@ -37,7 +37,7 @@ export const Header = () => {
                                     "text-neutral-900 font-semibold" : ""
                             )}
                         >
-                            {label}
+                            <span>{label}</span>
                         </Link>
                     ))}
                 </nav>
@@ -60,25 +60,33 @@ export const Header = () => {
                         )}
                     </button>
 
-                    {isOpen && (<div
-                        className={`md:hidden overflow-hidden transition-all duration-300 ${
-                            isOpen ? "max-h-96 border-t border-border" : "max-h-0"
-                        }`}
-                    >
-                        <ul className="flex flex-col py-2">
-                            {links.map(({href, id, label}) => (
-                                <li key={id}>
-                                    <a
-                                        href={href}
-                                        onClick={() => setIsOpen(false)}
-                                        className="block px-4 py-3 text-sm text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
-                                    >
-                                        {label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>)}
+                    {isOpen && (
+                        <>
+                            <div
+                                onClick={() => setIsOpen(false)}
+                                className="fixed right-0 z-50 w-full h-140 flex flex-col items-center justify-center backdrop-blur-xl p-4 animate-[fadeIn_0.2s_ease-out] rounded-b-2xl bg-background"
+                            >
+                                {/* Modal Card Content */}
+                                <ul className="flex flex-col space-y-1">
+                                    {links.map(({label, href, id, icon: Icon}) => (
+                                        <li key={id}>
+                                            <Link
+                                                href={href}
+                                                onClick={() => setIsOpen(false)}
+                                                className={cn(
+                                                    "flex items-center space-x-4 w-full px-4 py-3 rounded-xl text-neutral-500 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors duration-150 font-medium text-sm",
+                                                    activeSection === id && "bg-neutral-50 dark:bg-neutral-800 text-neutral-900 font-semibold"
+                                                )}
+                                            >
+                                                <Icon size={18} className="text-neutral-400"/>
+                                                <span>{label}</span>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </>
+                    )}
                 </nav>
             </div>
         </header>

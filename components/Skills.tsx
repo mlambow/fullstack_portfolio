@@ -3,7 +3,7 @@ import skills from "@/config/skills";
 
 export const Skills = () => {
     return (
-        <section id="skills" className="pt-1.5 md:-mt-14 pb-12 transition-colors duration-200">
+        <section id="skills" className="pt-1.5 lg:pt-3 md:-mt-14 lg:mt-0 pb-12 transition-colors duration-200">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section Header */}
                 <div className="pb-1">
