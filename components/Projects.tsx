@@ -21,10 +21,10 @@ export const Projects = ({projects}: ProjectGridProps) => {
             {/* Structural Header with stark contrast */}
             <div className="pb-1">
                 <span
-                    className="text-xs font-mono font-normal uppercase tracking-widest text-muted-foreground block mb-2">
+                    className="text-[8px] md:text-xs font-mono font-normal uppercase tracking-widest text-muted-foreground block mb-2">
                     {"// Selected Repositories"}
                 </span>
-                <h2 className="text-xl md:text-3xl font-normal tracking-tight text-foreground">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal tracking-tight text-foreground">
                     Production Architecture
                 </h2>
             </div>
@@ -38,19 +38,19 @@ export const Projects = ({projects}: ProjectGridProps) => {
                     >
                         <div className="space-y-2">
                             <div className="flex items-baseline justify-between gap-4">
-                                <h3 className="text-lg md:text-xl font-light tracking-tight text-foreground group-hover:text-muted-foreground transition-colors duration-200">
+                                <h3 className="text-base md:text-lg lg:text-xl font-light tracking-tight text-foreground group-hover:text-muted-foreground transition-colors duration-200">
                                     {project.title}
                                 </h3>
 
                                 {/* SPARING COLOR UTILITY (dot) */}
                                 {project.isHot && (
                                     <span
-                                        className="inline-flex items-center gap-1.5 text-[10px] font-mono tracking-wider uppercase text-emerald-600 dark:text-emerald-400 font-medium">
-                                        <span className="relative flex h-1.5 w-1.5">
+                                        className="inline-flex items-center gap-1.5 text-[6px] sm:text-[8px] md:text-[10px] font-mono tracking-wider uppercase text-emerald-600 dark:text-emerald-400 font-medium">
+                                        <span className="relative flex h-1 w-1 md:h-1.5 md:w-1.5">
                                         <span
                                             className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                         <span
-                                            className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                                            className="relative inline-flex rounded-full h-1 w-1 md:h-1.5 md:w-1.5 bg-emerald-500"></span>
                                         </span>
                                         Active Node
                                     </span>
@@ -68,7 +68,7 @@ export const Projects = ({projects}: ProjectGridProps) => {
                                 {project.tags.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="text-xs font-mono text-muted-foreground/80 lowercase"
+                                        className="text-[10px] md:text-xs font-mono text-muted-foreground/80 lowercase"
                                     >
                                         #{tag}
                                     </span>

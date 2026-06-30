@@ -38,15 +38,16 @@ export const Contact = () => {
     return (
         <section
             id="contact"
-            className="py-26 bg-background text-foreground transition-colors duration-200"
+            className="py-6 lg:py-26 bg-background text-foreground transition-colors duration-200"
         >
-            <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div
+                className="w-full lg:max-w-6xl mx-auto px-4 flex flex-col lg:grid lg:grid-cols-12 gap-16">
 
                 {/* LEFT PANEL: Structural Contexts */}
-                <div className="lg:col-span-5 space-y-6">
+                <div className="w-full lg:col-span-5 space-y-6">
                     <div>
                         <div
-                            className="inline-flex items-center gap-2 mb-6 text-xs font-mono tracking-widest uppercase text-muted-foreground">
+                            className="inline-flex items-center gap-2 mb-6 text-[9px] sm:text-xs font-mono tracking-widest uppercase text-muted-foreground">
                             <span className="relative flex h-2 w-2">
                               <span
                                   className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 transition-colors ease-in-out duration-300 ${
@@ -66,17 +67,17 @@ export const Contact = () => {
                             </span>
                             {"// Connection Gateway"}
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-normal tracking-tight text-foreground">
+                        <h2 className="text-xl sm:text-2xl md:text-4xl font-normal tracking-tight text-foreground">
                             Get In Touch
                         </h2>
-                        <p className="text-sm md:text-base text-foreground font-light mt-4 leading-relaxed max-w-sm">
+                        <p className="text-xs sm:text-sm md:text-base text-foreground font-light mt-4 leading-relaxed w-full lg:max-w-sm">
                             Let&#39;s discuss architecture, production systems, or contract opportunities. Drop a
                             message or reach out via professional secure networks.
                         </p>
                     </div>
 
                     {/* Clean Directory Links */}
-                    <div className="space-y-3 pt-6 text-sm font-mono">
+                    <div className="flex lg:flex-col space-y-3 pt-6 text-sm font-mono">
                         <div className="flex flex-col">
                             <span
                                 className="text-[10px] uppercase text-muted-foreground tracking-wider">{"// secure_email"}</span>
@@ -85,7 +86,7 @@ export const Contact = () => {
                                 wandile.mlambo@yahoo.com
                             </a>
                         </div>
-                        <div className="flex flex-col pt-2">
+                        <div className="flex flex-col md:pt-2 ml-10 lg:ml-0">
                             <span
                                 className="text-[10px] uppercase text-muted-foreground tracking-wider"
                             >
@@ -130,7 +131,7 @@ export const Contact = () => {
                                     value={formData.name}
                                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                                     placeholder="e.g., Alexander Wright"
-                                    className="w-full py-2 bg-transparent border-b border-border/80 focus:border-foreground focus:outline-none font-light text-base placeholder-foreground/50 text-foreground transition-colors disabled:opacity-40"
+                                    className="w-full py-2 bg-transparent border-b border-border/80 focus:border-foreground focus:outline-none font-light text-sm placeholder-foreground/50 text-foreground transition-colors disabled:opacity-40"
                                 />
                             </div>
 
@@ -148,7 +149,7 @@ export const Contact = () => {
                                     value={formData.email}
                                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                                     placeholder="e.g., alex@company.com"
-                                    className="w-full py-2 bg-transparent border-b border-border/80 focus:border-foreground focus:outline-none font-light text-base placeholder-foreground/50 text-foreground transition-colors disabled:opacity-40"
+                                    className="w-full py-2 bg-transparent border-b border-border/80 focus:border-foreground focus:outline-none font-light text-sm placeholder-foreground/50 text-foreground transition-colors disabled:opacity-40"
                                 />
                             </div>
 
@@ -166,7 +167,7 @@ export const Contact = () => {
                                     value={formData.message}
                                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                                     placeholder="Describe your architecture requirements or workflow parameters..."
-                                    className="w-full py-2 bg-transparent border-b border-border/80 focus:border-foreground focus:outline-none font-light text-base placeholder-foreground/50 text-foreground transition-colors resize-none disabled:opacity-40"
+                                    className="w-full py-2 bg-transparent border-b border-border/80 focus:border-foreground focus:outline-none font-light text-sm placeholder-foreground/50 text-foreground transition-colors resize-none disabled:opacity-40"
                                 />
                             </div>
 

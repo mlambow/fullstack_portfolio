@@ -134,3 +134,11 @@ html {
 section {
     scroll-margin-top: 6rem;
 }
+
+@utility scrollbar-hidden {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
