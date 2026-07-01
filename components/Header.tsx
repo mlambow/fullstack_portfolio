@@ -15,7 +15,7 @@ const links = [
 
 export const Header = () => {
     const activeSection = useActiveSection()
-    const [isOpen, setIsOpen] = React.useState(true)
+    const [isOpen, setIsOpen] = React.useState(false)
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur">
